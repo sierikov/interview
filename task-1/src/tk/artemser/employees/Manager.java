@@ -1,4 +1,4 @@
-package tk.artemser.emploees;
+package tk.artemser.employees;
 
 import tk.artemser.contract.Contract;
 

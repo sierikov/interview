@@ -1,4 +1,4 @@
-package tk.artemser.emploees;
+package tk.artemser.employees;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -19,13 +19,20 @@ public class ProgrammerTest {
     }
 
     @Test
-    public void testEmploeeConstructorNull(){
+    public void testEmployeeConstructorNull(){
         try {
-            Programmer programmer1 =  new Programmer(null);
+            new Programmer(null);
             fail("Contract() cannot accept negative Salary.");
         } catch (NullPointerException e) {
             System.out.println("Contract - Invalid Salary checked");
         }
+    }
+
+    @Test
+    public void testEmployeeConstructor() {
+        Contract contract = new Contract(this.SALARY, this.HOURS);
+        Programmer programmer1 = new Programmer(contract);
+        assertEquals(contract, programmer1.getContract());
     }
 
     @Test

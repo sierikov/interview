@@ -1,4 +1,4 @@
-package tk.artemser.emploees;
+package tk.artemser.employees;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
