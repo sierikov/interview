@@ -4,11 +4,11 @@ import tk.artemser.contract.Contract;
 
 public class Manager extends Employee {
 
-    Manager(Contract contract){
+    public Manager(Contract contract){
         super(contract);
     }
 
-    Manager(int salary, int neededHours) {
+    public Manager(int salary, int neededHours) {
         super(salary, neededHours);
     }
 

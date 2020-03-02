@@ -1,6 +1,14 @@
 package tk.artemser;
 
-import java.util.Collections;
+import tk.artemser.contract.Contract;
+import tk.artemser.employees.Employee;
+import tk.artemser.employees.Manager;
+import tk.artemser.employees.Programmer;
+
+import java.util.*;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Utils {
     public static String interviewRecursionTest(String s) {
@@ -65,5 +73,13 @@ public class Utils {
         }
 
         return result.toString().trim();
+    }
+
+    public static List<Employee> mergeEmployees(List<Employee> a, List<Employee> b){
+        List<Employee> m = Stream.concat(b.stream(), a.stream())
+                .distinct()
+                .collect(Collectors.toList());
+        m.retainAll(b);
+        return m;
     }
 }

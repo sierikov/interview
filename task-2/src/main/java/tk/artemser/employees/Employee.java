@@ -3,13 +3,16 @@ package tk.artemser.employees;
 import tk.artemser.contract.Contract;
 
 import java.util.Objects;
+import java.util.UUID;
 
-abstract class Employee {
+public abstract class Employee {
     private Contract contract;
     private int realHours;
+    private UUID uuid;
 
     Employee(Contract contract) {
         Objects.requireNonNull(contract);
+        this.uuid = UUID.randomUUID();
         this.contract = contract;
         this.realHours = 0;
     }
@@ -34,4 +37,26 @@ abstract class Employee {
         return this.realHours;
     }
 
+    /* Only for test purposes */
+    public void setUuid(UUID uuid){
+        this.uuid = uuid;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || this.getClass() != o.getClass()) return false;
+        Employee e = (Employee) o;
+        return this.uuid.equals(e.uuid);
+    }
+
+    @Override
+    public int hashCode() {
+        return this.uuid.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " " + realHours;
+    }
 }
