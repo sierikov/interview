@@ -10,13 +10,6 @@ import static org.junit.Assert.*;
 
 public class UtilsTest
 {
-    private UtilsTest utils;
-
-    @Before
-    public void setUp(){
-        utils = new UtilsTest();
-    }
-
     @Test
     public void testIsVowel()
     {
@@ -33,5 +26,16 @@ public class UtilsTest
         assertEquals("h*e*a*l*o",Utils.interviewRecursionTest("healo"));
         assertEquals("a*bc", Utils.interviewRecursionTest("abc"));
         assertEquals("o*a*b", Utils.interviewRecursionTest("oab"));
+    }
+
+    @Test
+    public void testToBinary(){
+        assertEquals("011001100110111101101111", Utils.toBinary("foo"));
+        assertEquals("01000111", Utils.toBinary("G"));
+    }
+
+    @Test
+    public void testConverter(){
+        assertEquals("00 0 0 0 00 000 0 000", Utils.converter("G"));
     }
 }
