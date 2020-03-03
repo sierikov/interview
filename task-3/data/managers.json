@@ -1,9 +1,0 @@
-{
-  "@type" : "Manager",
-  "contract" : {
-    "salary" : 10.0,
-    "neededHours" : 10
-  },
-  "realHours" : 0,
-  "uuid" : "915c2ce7-6371-42cf-a5c9-6c6ee76eecfc"
-}

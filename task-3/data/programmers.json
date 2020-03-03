@@ -1,9 +1,0 @@
-{
-  "@type" : "Programmer",
-  "contract" : {
-    "salary" : 10.0,
-    "neededHours" : 10
-  },
-  "realHours" : 0,
-  "uuid" : "578dfe07-1fd8-4bda-9ca8-f1990c13f280"
-}

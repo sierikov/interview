@@ -1,0 +1,11 @@
+{
+  "employees" : [ {
+    "type" : "Manager",
+    "contract" : {
+      "salary" : 10.0,
+      "neededHours" : 10
+    },
+    "realHours" : 0,
+    "uuid" : "6984e7a9-badd-48e8-9744-69cdd3c948e5"
+  } ]
+}

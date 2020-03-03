@@ -9,10 +9,10 @@ import java.util.Objects;
 import java.util.UUID;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = Manager.class, name = "Manager"),
-        @JsonSubTypes.Type(value = Programmer.class, name = "Programmer")
+    @JsonSubTypes.Type(value = Manager.class, name = "Manager"),
+    @JsonSubTypes.Type(value = Programmer.class, name = "Programmer")
 })
 public abstract class Employee {
     private Contract contract;
