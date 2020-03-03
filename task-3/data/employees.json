@@ -6,7 +6,7 @@
       "neededHours" : 10
     },
     "realHours" : 0,
-    "uuid" : "9f4af219-5566-4825-a1bf-0d740c5d18a2"
+    "uuid" : "ccd7be2b-9f42-4542-a511-157ed3548ae1"
   }, {
     "type" : "Manager",
     "contract" : {
@@ -14,6 +14,6 @@
       "neededHours" : 10
     },
     "realHours" : 0,
-    "uuid" : "b647fda5-3438-48c4-9d2f-6b0f4b8bc5c8"
+    "uuid" : "48d9c838-9a1a-402f-9df4-c41f01095c8f"
   } ]
 }

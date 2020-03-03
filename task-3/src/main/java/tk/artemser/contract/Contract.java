@@ -1,14 +1,14 @@
 package tk.artemser.contract;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
+@NoArgsConstructor
 public class Contract {
 
-    private Double salary;
-    private Integer neededHours;
-
-    public Contract(){}
-
+    @Getter private Double salary;
+    @Getter private Integer neededHours;
+    
     public Contract (Double salary, Integer neededHours){
         this.setSalary(salary);
         this.setNeededHours(neededHours);
@@ -19,7 +19,7 @@ public class Contract {
         return this.salary / this.neededHours;
     }
 
-    public boolean isOvertime(Integer hours){
+    public boolean isOvertime(Integer hours) {
         return hours > this.neededHours;
     }
 
@@ -28,16 +28,8 @@ public class Contract {
         this.neededHours = neededHours;
     }
 
-    public Integer getNeededHours() {
-        return this.neededHours;
-    }
-
     public void setSalary(Double salary) {
         if (salary < 0) throw new IllegalArgumentException("Salary cannot be negative.");
         this.salary = salary;
-    }
-
-    public Double getSalary() {
-        return this.salary;
     }
 }

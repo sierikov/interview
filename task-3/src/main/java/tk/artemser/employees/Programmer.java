@@ -1,10 +1,11 @@
 package tk.artemser.employees;
 
+import lombok.NoArgsConstructor;
 import tk.artemser.contract.Contract;
 
+@NoArgsConstructor
 public class Programmer extends Employee {
 
-    public Programmer(){}
     public Programmer(Contract contract){
         super(contract);
     }
