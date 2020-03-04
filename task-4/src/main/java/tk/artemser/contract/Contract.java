@@ -1,6 +1,5 @@
 package tk.artemser.contract;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 @NoArgsConstructor
@@ -14,7 +13,6 @@ public class Contract {
         this.setNeededHours(neededHours);
     }
 
-    @JsonIgnore
     public Double getSalaryPerHour() {
         return this.salary / this.neededHours;
     }
