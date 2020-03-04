@@ -1,4 +1,4 @@
-package tk.artemser.contract;
+package tk.artemser.task4.domain.contract;
 
 import lombok.*;
 

@@ -1,4 +1,6 @@
-package tk.artemser.employees;
+package tk.artemser.task4.domain.employees;
+
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

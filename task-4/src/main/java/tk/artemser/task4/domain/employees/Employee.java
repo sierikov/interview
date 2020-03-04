@@ -1,4 +1,4 @@
-package tk.artemser.employees;
+package tk.artemser.task4.domain.employees;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
