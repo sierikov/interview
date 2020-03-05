@@ -1,12 +1,23 @@
 package tk.artemser.task4.domain.contract;
 
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
+
+import javax.persistence.*;
+import java.util.UUID;
+
+@Data
+@Entity
 @NoArgsConstructor
 public class Contract {
-
-    @Getter private Double salary;
-    @Getter private Integer neededHours;
+    private Double salary;
+    @Id
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Column(columnDefinition = "BINARY(16)")
+    private UUID id;
+    private Integer neededHours;
 
     public Contract (Double salary, Integer neededHours){
         this.setSalary(salary);

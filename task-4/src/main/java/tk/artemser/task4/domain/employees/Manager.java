@@ -1,9 +1,14 @@
 package tk.artemser.task4.domain.employees;
 
 import lombok.NoArgsConstructor;
-import tk.artemser.contract.Contract;
-import tk.artemser.task4.domain.employees.Employee;
+import tk.artemser.task4.domain.contract.Contract;
 
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @NoArgsConstructor
 public class Manager extends Employee {
     public Manager(Contract contract){

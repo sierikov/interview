@@ -1,24 +1,32 @@
 package tk.artemser.task4.domain.employees;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-
 import lombok.*;
-import tk.artemser.contract.Contract;
+
+import javax.persistence.*;
+
+import org.hibernate.annotations.GenericGenerator;
+import tk.artemser.task4.domain.contract.Contract;
 
 import java.util.Objects;
 import java.util.UUID;
 
+@Data
+@MappedSuperclass
 @NoArgsConstructor
 public abstract class Employee {
-    @Getter @Setter private Contract contract;
-    @Getter @Setter private Integer realHours;
-    @Getter @Setter private UUID uuid;
+    @Id
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Column(columnDefinition = "BINARY(16)")
+    private UUID id;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Contract contract;
+
+    private Integer realHours;
 
     Employee(Contract contract) {
         Objects.requireNonNull(contract);
-        this.uuid = UUID.randomUUID();
         this.contract = contract;
         this.realHours = 0;
     }
@@ -40,11 +48,12 @@ public abstract class Employee {
         if (this == o) return true;
         if (o == null || this.getClass() != o.getClass()) return false;
         Employee e = (Employee) o;
-        return this.uuid.equals(e.uuid);
+        return this.id.equals(e.id);
     }
 
     @Override
     public int hashCode() {
-        return this.uuid.hashCode();
+        return this.id.hashCode();
     }
+
 }
