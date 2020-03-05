@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import tk.artemser.task4.domain.employees.Manager;
 import tk.artemser.task4.repository.ManagerRepo;
 
-import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -18,7 +17,7 @@ public class ManagerDao {
         return managerRepo.save(manager);
     }
 
-    public Optional<Manager> read(Long id) {
+    public Optional<Manager> read(UUID id) {
         return managerRepo.findById(id);
     }
 

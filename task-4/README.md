@@ -44,5 +44,5 @@ API documentation can be found below or under
  - General
  - `/manager`
    - `PUT` - Create a new `Manager` employee.
-   - `GET` - Get List of all employees of type `Manager`
+   - `GET` - Get List of all employees of type `Manager` 
 

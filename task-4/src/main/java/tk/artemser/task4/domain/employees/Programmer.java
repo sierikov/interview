@@ -11,8 +11,6 @@ import javax.persistence.InheritanceType;
 @NoArgsConstructor
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Programmer extends Employee {
-    // TODO: Controller
-    // TODO: DAO
     public Programmer(Contract contract){
         super(contract);
     }
