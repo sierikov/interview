@@ -1,5 +1,7 @@
 package tk.artemser.task4.domain.employees;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.*;
 
 import javax.persistence.*;
@@ -11,7 +13,8 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Data
-@MappedSuperclass
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @NoArgsConstructor
 public abstract class Employee {
     @Id
@@ -33,6 +36,10 @@ public abstract class Employee {
 
     Employee(Double salary, Integer neededHours) {
         this(new Contract(salary, neededHours));
+    }
+
+    public String getType() {
+        return this.getClass().getSimpleName();
     }
 
     public double calculateSalary() {
