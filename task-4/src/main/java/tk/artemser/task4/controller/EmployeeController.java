@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tk.artemser.task4.dao.EmployeeDao;
-import tk.artemser.task4.domain.employees.Employee;
 import tk.artemser.task4.domain.employees.EmployeeType;
 
 import java.util.UUID;
@@ -18,8 +17,8 @@ public class EmployeeController {
     private EmployeeDao employeeDao;
 
     @GetMapping
-    public Iterable<Employee> get() {
-        return employeeDao.read();
+    public ResponseEntity get() {
+        return new ResponseEntity<>(employeeDao.read(), HttpStatus.OK);
     }
 
     @GetMapping("/{type}")
