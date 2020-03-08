@@ -25,8 +25,8 @@ public abstract class Employee {
 
     @OneToOne(cascade = CascadeType.ALL)
     private Contract contract;
-
     private Integer realHours;
+    private EmployeeType type;
 
     Employee(Contract contract) {
         Objects.requireNonNull(contract);
@@ -36,10 +36,6 @@ public abstract class Employee {
 
     Employee(Double salary, Integer neededHours) {
         this(new Contract(salary, neededHours));
-    }
-
-    public String getType() {
-        return this.getClass().getSimpleName();
     }
 
     public double calculateSalary() {

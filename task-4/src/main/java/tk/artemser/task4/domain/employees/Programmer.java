@@ -17,5 +17,6 @@ public class Programmer extends Employee {
 
     public Programmer(Double salary, Integer neededHours) {
         super(salary, neededHours);
+        this.setType(EmployeeType.PROGRAMMER);
     }
 }

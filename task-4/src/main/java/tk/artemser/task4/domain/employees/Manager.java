@@ -17,6 +17,7 @@ public class Manager extends Employee {
 
     public Manager(Double salary, Integer neededHours) {
         super(salary, neededHours);
+        this.setType(EmployeeType.MANAGER);
     }
 
     @Override

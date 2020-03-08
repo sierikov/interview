@@ -8,7 +8,7 @@ import tk.artemser.task4.domain.contract.Contract;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/contract")
+@RequestMapping("/contracts")
 public class ContractController {
     @Autowired
     private ContractDao contractDao;

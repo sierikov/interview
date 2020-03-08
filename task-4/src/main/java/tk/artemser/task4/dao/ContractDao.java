@@ -3,9 +3,7 @@ package tk.artemser.task4.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.artemser.task4.domain.contract.Contract;
-import tk.artemser.task4.domain.employees.Manager;
 import tk.artemser.task4.repository.ContractRepo;
-import tk.artemser.task4.repository.ManagerRepo;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -26,5 +24,4 @@ public class ContractDao {
     public Contract update(Contract contract) {
         return contractRepo.save(contract);
     }
-
 }
