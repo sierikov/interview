@@ -5,7 +5,7 @@ import java.math.RoundingMode;
 import java.util.List;
 
 public class Accountant {
-    public static double summary(List<Employee> employees) {
+    public static Double summary(List<Employee> employees) {
         double salarySum = employees.stream()
                 .mapToDouble(Employee::calculateSalary)
                 .sum();
