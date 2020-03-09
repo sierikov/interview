@@ -21,7 +21,7 @@ public class Manager extends Employee {
     }
 
     @Override
-    public double calculateSalary() {
+    public Double calculateSalary() {
         boolean isOvertime = super.getContract().isOvertime(super.getRealHours());
         if (isOvertime){
             return super.getContract().getSalary();

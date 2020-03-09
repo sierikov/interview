@@ -38,7 +38,7 @@ public abstract class Employee {
         this(new Contract(salary, neededHours));
     }
 
-    public double calculateSalary() {
+    public Double calculateSalary() {
         return this.contract.getSalaryPerHour() * realHours;
     }
 

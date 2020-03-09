@@ -2,6 +2,7 @@ package tk.artemser.task4.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tk.artemser.task4.domain.employees.Employee;
 import tk.artemser.task4.domain.employees.EmployeeType;
 import tk.artemser.task4.domain.employees.Manager;
@@ -12,6 +13,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
+@Transactional
 public class EmployeeDao {
     @Autowired
     private EmployeeRepo employeeRepo;
